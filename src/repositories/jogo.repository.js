@@ -1,10 +1,7 @@
 
-
-
-
 import { knex } from '../database/knex.js';
 
-class jogosRepository {
+class JogosRepository {
   async getall() {
     return knex('jogos').select('*');
   }
@@ -31,4 +28,4 @@ class jogosRepository {
   }
 }
 
-export const jogosRepository = new jogosRepository();
+export const jogosRepository = new JogosRepository();

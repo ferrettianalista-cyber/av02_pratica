@@ -1,6 +1,4 @@
 
-
-
 import { jogosController } from '../controllers/jogo.controllers.js';
 
 export const Router = Router();

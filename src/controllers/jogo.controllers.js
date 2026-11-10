@@ -1,7 +1,7 @@
 
-import { jogosServices } from '../services/jogos.service.js';
+import { jogosServices } from '../services/jogo.service.js';
 
-class jogosController {
+class JogosController {
      async getall(_req, res)  {
   try {
     return res.json(await jogosServices.getall());
@@ -55,5 +55,5 @@ async update(req, res)  {
 
 }
 
-export const jogosController = new jogosController();
+export const jogosController = new JogosController();
 

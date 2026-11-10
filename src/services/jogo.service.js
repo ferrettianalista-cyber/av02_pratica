@@ -1,10 +1,8 @@
 
-import { } from 'node:crypto';
-import { knex } from '../database/knex.js';
-import {jogosRepository } from '..jogo/repositories/jogo.repository.js';
+import { jogosRepository } from "../repositories/jogo.repository.js";
 
 
-class jogosService {
+class JogosService {
   async getall() {
     return jogosRepository.getall()
   }
@@ -28,4 +26,4 @@ class jogosService {
   }
 }
 
-export const jogosServices = new jogosService();
+export const jogosServices = new JogosService();

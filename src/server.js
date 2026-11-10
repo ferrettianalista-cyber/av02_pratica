@@ -1,16 +1,20 @@
 
-import 'dotenv/config';
+
 import express from 'express';
-import { knex } from './database/knex.js';
-import { jogosRouter } from '.jogos/routes/.route.js';
+import { jogosRouter } from '../routes/jogos.route.js'
+
+const server = express
+
+server.use(express.json())
+
+server.get('/health', (req, res) => {
+    res.json({
+    status:'Servidor esta ligado'
+})
+})
+server.use('/jogos', jogosRouter);
 
 
-const app = express();
-const port = Number(process.env.PORT) || 3000;
-
-app.use(express.json());
-app.use('/jogos', jogosRouter);
-
-
-const server = app.listen(port, () => console.log(`App rodando em http://localhost:${port}`));
-
+server.listen(3000, ()=> {
+    console.log('http://localhost:3000')
+})
